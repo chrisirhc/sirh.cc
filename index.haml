@@ -1,0 +1,20 @@
+!!! 5
+%html(lang="en")
+  %head
+    %title Chris Chua
+    %script( src="lib/jquery/jquery-1.8.0.min.js" )
+    %script( src="lib/bootstrap/js/bootstrap.min.js" )
+    %script( src="lib/d3/d3.v2.js" )
+    %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" )
+    %link( rel="stylesheet" href="my.css" )
+  %body( style="padding: 30px" )
+    .container
+      .hero-unit
+        %h1 Chris Chua
+        %p Visualizing with code.
+        %p
+          %a( class="btn" href="http://blog.sirh.cc/" ) Blog
+          %a( class="btn" href="http://github.com/chrisirhc/" ) Code
+          %a( class="btn" href="http://sirh.cc/cv" ) CV
+      #svg-container( style="text-align: center" )
+    %script( src="my.js" )
