@@ -8,7 +8,8 @@ var svg = d3.select("#svg-container").append("svg:svg")
 
 var bgRect = svg.append("svg:rect")
              .attr("x", 0).attr("y", 0)
-             .attr("width", width).attr("height", height);
+             .attr("width", width).attr("height", height)
+             .style("fill", "white");
 var circle = svg.append("svg:circle").attr("r", 5);
 
 var timelineObjs = [];

@@ -2,6 +2,5 @@
   cursor: none;
 }
 circle {
-  stroke: #000;
-  stroke-opacity: .5;
+  fill: white;
 }
