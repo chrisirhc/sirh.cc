@@ -1,5 +1,5 @@
 /* global d3 */
-var width = 800, height = 800;
+var width = 800, height = 400;
 var svg = d3.select("#svg-container").append("svg:svg")
           .attr("width", width)
           .attr("height", height);
@@ -90,16 +90,16 @@ function clearPoints () {
 
 }
 
-var countW = 20, countH = 20;
+var countW = 20, countH = 10;
 var littleW = width / countW, littleH = height / countH;
-var timelineObjCount = 0;
+var timelineObjCount = parseInt( Math.random() * countW * countH );
 var globalPause = false;
 function TimelineObj ( aArrOfPoints, aArrOfTimes ) {
     this.arrOfPoints = aArrOfPoints;
     this.arrOfTimes = aArrOfTimes;
     //TODO: Fix calculations
     this.obj = svg.append("svg:rect")
-               .attr("x", ( parseInt(timelineObjCount / ( countH )) % countW ) * littleW )
+               .attr("x", ( parseInt(timelineObjCount / ( countW )) % countW ) * littleW )
                .attr("y", timelineObjCount % countW * littleH )
                .attr("width", littleW)
                .attr("height", littleH);
