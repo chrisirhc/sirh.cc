@@ -1,3 +1,6 @@
+#svg-container {
+  cursor: none;
+}
 circle {
   stroke: #000;
   stroke-opacity: .5;
