@@ -100,15 +100,18 @@ function TimelineObj ( aArrOfPoints, aArrOfTimes ) {
                .attr("height", littleH);
     this.nextTick = function nextTick ( i ) {
         var that = this;
-        var nextI = (i+1) % that.arrOfTimes.length;
+        var nextI = (i+1) % (2*that.arrOfTimes.length);
+        // Reverse it
+        var currentI = i < that.arrOfTimes.length ? i
+                     : 2*that.arrOfTimes.length - i - 1;
         // console.log(this, nextI);
         this.obj.style("fill",
-                       d3.hsl( this.arrOfPoints[i][0] * 360, 0.25 +
-                               0.75 * this.arrOfPoints[i][1], 0.5 ));
+                       d3.hsl( this.arrOfPoints[currentI][0] * 360, 0.25 +
+                               0.75 * this.arrOfPoints[currentI][1], 0.5 ));
         if ( !globalPause ) {
             d3.timer(function (){
                 return that.nextTick(nextI);
-            }, this.arrOfTimes[i]);
+            }, this.arrOfTimes[currentI]);
         }
         return true;
     }
