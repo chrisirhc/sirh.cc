@@ -17,6 +17,7 @@ var arrOfPoints = [];
 var arrOfTimes = [];
 var dist = 0;
 var MAX_DIST = 100;
+var MAX_OBJS = 50;
 
 svg.on("mousemove", function () {
     var point = d3.mouse(svg[0][0]);
@@ -80,6 +81,9 @@ function store ( aArrOfPoints, aArrOfTimes ) {
     }
     arrOfTimesCopy[0] = 0;
     timelineObjs.push(new TimelineObj(arrOfPointsCopy, arrOfTimesCopy));
+    if (timelineObjs.length > MAX_OBJS) {
+        timelineObjs.shift().obj.remove();
+    }
 }
 
 function clearPoints () {
