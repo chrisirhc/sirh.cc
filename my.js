@@ -4,8 +4,6 @@ var svg = d3.select("#svg-container").append("svg:svg")
           .attr("width", width)
           .attr("height", height);
 
-// svg.selectAll("circle");
-
 var bgRect = svg.append("svg:rect")
              .attr("x", 0).attr("y", 0)
              .attr("width", width).attr("height", height)
@@ -19,15 +17,17 @@ var dist = 0;
 var MAX_DIST = 100;
 var MAX_OBJS = 50;
 
-svg.on("mousemove", function () {
-    var point = d3.mouse(svg[0][0]);
+d3.select(document.body).on("mousemove", function () {
+    var point = d3.mouse(document.body);
+    point[0] = point[0] / window.innerWidth * width;
+    point[1] = point[1] / window.innerHeight * height;
     // console.log(point);
     circle
     .attr("cx", point[0])
     .attr("cy", point[1]);
     addPoint( point );
 
-    bgRect.style("fill", d3.hsl( point[0] / width * 360, 0.25 + 0.75 * point[1] / height, 0.5 ));
+    bgRect.style("fill", d3.hsl( point[0] / window.innerWidth * 360, 0.25 + 0.75 * point[1] / window.innerHeight, 0.5 ));
 
     var update = svg.selectAll(".p").data( arrOfPoints );
     update
@@ -57,7 +57,7 @@ function addPoint ( point ) {
             arrOfTimes.push(new Date().getTime());
             dist = currentDistSum;
         } else {
-            store( arrOfPoints, arrOfTimes );
+            store( arrOfPoints, arrOfTimes, timelineObjCount++ );
             arrOfPoints = [ nPoint ];
             arrOfTimes = [ new Date().getTime() ];
             dist = currentDistSum - dist;
@@ -69,7 +69,7 @@ function addPoint ( point ) {
     }
 }
 
-function store ( aArrOfPoints, aArrOfTimes ) {
+function store ( aArrOfPoints, aArrOfTimes, aCount ) {
     var arrOfPointsCopy = aArrOfPoints.slice();
     var arrOfTimesCopy = aArrOfTimes.slice();
     var i;
@@ -80,7 +80,7 @@ function store ( aArrOfPoints, aArrOfTimes ) {
         arrOfTimesCopy[i] -= arrOfTimesCopy[i-1];
     }
     arrOfTimesCopy[0] = 0;
-    timelineObjs.push(new TimelineObj(arrOfPointsCopy, arrOfTimesCopy));
+    timelineObjs.push(new TimelineObj(arrOfPointsCopy, arrOfTimesCopy, aCount));
     if (timelineObjs.length > MAX_OBJS) {
         timelineObjs.shift().obj.remove();
     }
@@ -94,13 +94,13 @@ var countW = 20, countH = 10;
 var littleW = width / countW, littleH = height / countH;
 var timelineObjCount = parseInt( Math.random() * countW * countH );
 var globalPause = false;
-function TimelineObj ( aArrOfPoints, aArrOfTimes ) {
+function TimelineObj ( aArrOfPoints, aArrOfTimes, aCount ) {
     this.arrOfPoints = aArrOfPoints;
     this.arrOfTimes = aArrOfTimes;
     //TODO: Fix calculations
     this.obj = svg.append("svg:rect")
-               .attr("x", ( parseInt(timelineObjCount / ( countW )) % countW ) * littleW )
-               .attr("y", timelineObjCount % countW * littleH )
+               .attr("x", ( parseInt(aCount / ( countW )) % countW ) * littleW )
+               .attr("y", aCount % countW * littleH )
                .attr("width", littleW)
                .attr("height", littleH);
     this.nextTick = function nextTick ( i ) {
@@ -121,5 +121,4 @@ function TimelineObj ( aArrOfPoints, aArrOfTimes ) {
         return true;
     }
     this.nextTick(0);
-    timelineObjCount++;
 }
