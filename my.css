@@ -1,5 +1,8 @@
+#me {
+  background-color: rgba(238, 238, 238, 0.8);
+}
 #svg-container {
-  cursor: none;
+  /* cursor: none; */
 }
 circle {
   fill: white;

@@ -1,14 +1,20 @@
 /* global d3 */
-var width = 800, height = 400;
+var width = 100, height = 100;
 var svg = d3.select("#svg-container").append("svg:svg")
-          .attr("width", width)
-          .attr("height", height);
+          .attr("width", "100%")
+          .attr("height", "100%")
+          .attr("preserveAspectRatio", "none")
+          .attr("viewBox", "0 0 " + width + " " + height)
+          .style('z-index', '-2000')
+          .style('position', 'fixed')
+          .style('left', '0')
+          .style('top', '0');
 
 var bgRect = svg.append("svg:rect")
              .attr("x", 0).attr("y", 0)
              .attr("width", width).attr("height", height)
              .style("fill", "white");
-var circle = svg.append("svg:circle").attr("r", 5);
+var circle = svg.append("svg:circle").attr("r", 1);
 
 var timelineObjs = [];
 var arrOfPoints = [];
@@ -19,8 +25,8 @@ var MAX_OBJS = 50;
 
 d3.select(document.body).on("mousemove", function () {
     var point = d3.mouse(document.body);
-    point[0] = point[0] / window.innerWidth * width;
-    point[1] = point[1] / window.innerHeight * height;
+    point[0] = ( point[0] - window.scrollX ) / window.innerWidth * width;
+    point[1] = ( point[1] - window.scrollY ) / window.innerHeight * height;
     // console.log(point);
     circle
     .attr("cx", point[0])
@@ -29,6 +35,7 @@ d3.select(document.body).on("mousemove", function () {
 
     bgRect.style("fill", d3.hsl( point[0] / window.innerWidth * 360, 0.25 + 0.75 * point[1] / window.innerHeight, 0.5 ));
 
+    /*
     var update = svg.selectAll(".p").data( arrOfPoints );
     update
     .attr("cx", function (d) { return d[0];})
@@ -38,7 +45,9 @@ d3.select(document.body).on("mousemove", function () {
                 .attr("r", 2).classed("p", true)
                 .attr("cx", function (d) { return d[0];})
                 .attr("cy", function (d) { return d[1];});
+
     var exit = update.exit().remove();
+     */
 });
 
 function addPoint ( point ) {
@@ -90,7 +99,7 @@ function clearPoints () {
 
 }
 
-var countW = 20, countH = 10;
+var countW = 10, countH = 10;
 var littleW = width / countW, littleH = height / countH;
 var timelineObjCount = parseInt( Math.random() * countW * countH );
 var globalPause = false;

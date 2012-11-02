@@ -6,15 +6,16 @@
     %script( src="lib/bootstrap/js/bootstrap.min.js" )
     %script( src="lib/d3/d3.v2.js" )
     %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" )
+    %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css" )
     %link( rel="stylesheet" href="my.css" )
   %body( style="padding: 30px" )
-    .container
-      .hero-unit
+    .container-fluid
+      #me.hero-unit
         %h1 Chris Chua
         %p Visualizing with code.
-        %p
-          %a( class="btn" href="http://blog.sirh.cc/" ) Blog
-          %a( class="btn" href="http://github.com/chrisirhc/" ) Code
-          %a( class="btn" href="http://sirh.cc/cv" ) CV
+        %p( style="text-align: center" )
+          %a( class="btn btn-large pull-left" href="http://blog.sirh.cc/" ) Blog
+          %a( class="btn btn-large" href="http://github.com/chrisirhc/" ) Code
+          %a( class="btn btn-large pull-right" href="http://sirh.cc/cv" ) CV
       #svg-container( style="text-align: center" )
     %script( src="my.js" )
