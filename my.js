@@ -95,10 +95,6 @@ function store ( aArrOfPoints, aArrOfTimes, aCount ) {
     }
 }
 
-function clearPoints () {
-
-}
-
 var countW = 10, countH = 10;
 var littleW = width / countW, littleH = height / countH;
 var timelineObjCount = parseInt( Math.random() * countW * countH );
