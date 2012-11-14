@@ -33,7 +33,7 @@ d3.select(document.body).on("mousemove", function () {
     .attr("cy", point[1]);
     addPoint( point );
 
-    bgRect.style("fill", d3.hsl( point[0] / window.innerWidth * 360, 0.25 + 0.75 * point[1] / window.innerHeight, 0.5 ));
+    bgRect.style("fill", d3.hsl( point[0] / width * 360, 0.0 + 0.75 * point[1] / height, 0.5 ));
 
     /*
     var update = svg.selectAll(".p").data( arrOfPoints );
@@ -120,7 +120,7 @@ function TimelineObj ( aArrOfPoints, aArrOfTimes, aCount ) {
                      : 2*that.arrOfTimes.length - i - 1;
         // console.log(this, nextI);
         this.obj.style("fill",
-                       d3.hsl( this.arrOfPoints[currentI][0] * 360, 0.25 +
+                       d3.hsl( this.arrOfPoints[currentI][0] * 360, 0.0 +
                                0.75 * this.arrOfPoints[currentI][1], 0.5 ));
         if ( !globalPause ) {
             d3.timer(function (){
