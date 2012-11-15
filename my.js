@@ -10,10 +10,6 @@ var svg = d3.select("#svg-container").append("svg:svg")
           .style('left', '0')
           .style('top', '0');
 
-var bgRect = svg.append("svg:rect")
-             .attr("x", 0).attr("y", 0)
-             .attr("width", width).attr("height", height)
-             .style("fill", "white");
 var circle = svg.append("svg:circle").attr("r", 1);
 
 var timelineObjs = [];
@@ -33,7 +29,7 @@ d3.select(document.body).on("mousemove", function () {
     .attr("cy", point[1]);
     addPoint( point );
 
-    bgRect.style("fill", d3.hsl( point[0] / width * 360, 0.0 + 0.75 * point[1] / height, 0.5 ));
+    d3.select(document.body).style("background-color", d3.hsl( point[0] / width * 360, 0.0 + 0.75 * point[1] / height, 0.5 ));
 
     /*
     var update = svg.selectAll(".p").data( arrOfPoints );
