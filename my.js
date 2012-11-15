@@ -3,7 +3,7 @@ var width = 100, height = 100;
 var svg = d3.select("#svg-container").append("svg:svg")
           .attr("width", "100%")
           .attr("height", "100%")
-          .attr("preserveAspectRatio", "none")
+          .attr("preserveAspectRatio", "xMidYMax")
           .attr("viewBox", "0 0 " + width + " " + height)
           .style('z-index', '-2000')
           .style('position', 'fixed')
