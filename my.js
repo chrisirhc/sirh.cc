@@ -10,8 +10,6 @@ var svg = d3.select("#svg-container").append("svg:svg")
           .style('left', '0')
           .style('top', '0');
 
-var circle = svg.append("svg:circle").attr("r", 1);
-
 var timelineObjs = [];
 var arrOfPoints = [];
 var arrOfTimes = [];
@@ -24,9 +22,6 @@ d3.select(document.body).on("mousemove", function () {
     point[0] = ( point[0] - window.scrollX ) / window.innerWidth * width;
     point[1] = ( point[1] - window.scrollY ) / window.innerHeight * height;
     // console.log(point);
-    circle
-    .attr("cx", point[0])
-    .attr("cy", point[1]);
     addPoint( point );
 
     d3.select(document.body).style("background-color", d3.hsl( point[0] / width * 360, 0.0 + 0.75 * point[1] / height, 0.5 ));
