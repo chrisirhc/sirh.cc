@@ -8,17 +8,6 @@
     %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" )
     %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css" )
     %link( rel="stylesheet" href="my.css" )
-  %body( style="padding: 30px" )
-    .container-fluid
-      #me.hero-unit
-        %h1 Chris Chua
-        %p Visualizing with code.
-        %p( style="text-align: center" )
-          %a( class="btn btn-large pull-left" href="http://blog.sirh.cc/" ) Blog
-          %a( class="btn btn-large" href="http://github.com/chrisirhc/" ) Code
-          %a( class="btn btn-large pull-right" href="http://about.me/chrisirhc" ) about.me
-      #svg-container( style="text-align: center" )
-    %script( src="my.js" )
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-38702346-1']);
@@ -30,3 +19,14 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+  %body( style="padding: 30px" )
+    .container-fluid
+      #me.hero-unit
+        %h1 Chris Chua
+        %p Visualizing with code.
+        %p( style="text-align: center" )
+          %a( class="btn btn-large pull-left" href="http://blog.sirh.cc/" ) Blog
+          %a( class="btn btn-large" href="http://github.com/chrisirhc/" ) Code
+          %a( class="btn btn-large pull-right" href="http://about.me/chrisirhc" ) about.me
+      #svg-container( style="text-align: center" )
+    %script( src="my.js" )
