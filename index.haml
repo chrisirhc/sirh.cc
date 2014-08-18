@@ -3,10 +3,10 @@
   %head
     %title Chris Chua
     %script( src="lib/jquery/jquery-1.8.0.min.js" )
-    %script( src="lib/bootstrap/js/bootstrap.min.js" )
+    %script( src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" )
     %script( src="lib/d3/d3.v2.js" )
-    %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" )
-    %link( rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css" )
+    %link( rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" )
+    %link( rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" )
     %link( rel="stylesheet" href="my.css" )
     :javascript
       var _gaq = _gaq || [];
@@ -20,13 +20,19 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
   %body( style="padding: 30px" )
-    .container-fluid
-      #me.hero-unit
+    .container
+      #me.jumbotron
         %h1 Chris Chua
         %p Visualizing with code.
-        %p( style="text-align: center" )
-          %a( class="btn btn-large pull-left" href="http://blog.sirh.cc/" ) Blog
-          %a( class="btn btn-large" href="http://github.com/chrisirhc/" ) Code
-          %a( class="btn btn-large pull-right" href="http://about.me/chrisirhc" ) about.me
-      #svg-container( style="text-align: center" )
+        .row
+          .col-sm-4.text-center
+            %p
+              %a( class="btn btn-lg btn-default" href="http://blog.sirh.cc/" ) Blog
+          .col-sm-4.text-center
+            %p
+              %a( class="btn btn-lg btn-default" href="http://github.com/chrisirhc/" ) Code
+          .col-sm-4.text-center
+            %p
+              %a( class="btn btn-lg btn-default" href="http://about.me/chrisirhc" ) about.me
+      #svg-container.text-center
     %script( src="my.js" )

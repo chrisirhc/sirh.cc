@@ -3,10 +3,10 @@
   <head>
     <title>Chris Chua</title>
     <script src='lib/jquery/jquery-1.8.0.min.js'></script>
-    <script src='lib/bootstrap/js/bootstrap.min.js'></script>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
     <script src='lib/d3/d3.v2.js'></script>
-    <link href='lib/bootstrap/css/bootstrap.min.css' rel='stylesheet' />
-    <link href='lib/bootstrap/css/bootstrap-responsive.min.css' rel='stylesheet' />
+    <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' />
+    <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css' rel='stylesheet' />
     <link href='my.css' rel='stylesheet' />
     <script type='text/javascript'>
       //<![CDATA[
@@ -24,17 +24,29 @@
     </script>
   </head>
   <body style='padding: 30px'>
-    <div class='container-fluid'>
-      <div class='hero-unit' id='me'>
+    <div class='container'>
+      <div class='jumbotron' id='me'>
         <h1>Chris Chua</h1>
         <p>Visualizing with code.</p>
-        <p style='text-align: center'>
-          <a class='btn btn-large pull-left' href='http://blog.sirh.cc/'>Blog</a>
-          <a class='btn btn-large' href='http://github.com/chrisirhc/'>Code</a>
-          <a class='btn btn-large pull-right' href='http://about.me/chrisirhc'>about.me</a>
-        </p>
+        <div class='row'>
+          <div class='col-sm-4 text-center'>
+            <p>
+              <a class='btn btn-lg btn-default' href='http://blog.sirh.cc/'>Blog</a>
+            </p>
+          </div>
+          <div class='col-sm-4 text-center'>
+            <p>
+              <a class='btn btn-lg btn-default' href='http://github.com/chrisirhc/'>Code</a>
+            </p>
+          </div>
+          <div class='col-sm-4 text-center'>
+            <p>
+              <a class='btn btn-lg btn-default' href='http://about.me/chrisirhc'>about.me</a>
+            </p>
+          </div>
+        </div>
       </div>
-      <div id='svg-container' style='text-align: center'></div>
+      <div class='text-center' id='svg-container'></div>
     </div>
     <script src='my.js'></script>
   </body>
