@@ -1,3 +1,4 @@
+/.next/
 node_modules/
 not-versioned/
 .DS_Store
