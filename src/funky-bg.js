@@ -112,7 +112,7 @@ export default function setupFunkyBackground() {
                         d3.hsl( this.arrOfPoints[currentI][0] * 360, 0.0 +
                                 0.75 * this.arrOfPoints[currentI][1], 0.5 ));
           if ( !globalPause ) {
-              d3.timer(function (){
+              d3.timeout(function (){
                   return that.nextTick(nextI);
               }, this.arrOfTimes[currentI]);
           }
