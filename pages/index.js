@@ -10,9 +10,9 @@ export default function Home() {
         <h1>Chris Chua</h1>
         <p>Software engineer.</p>
         <ul>
-          <li>
+          {/* <li>
             <a href="http://blog.sirh.cc/">Blog</a>
-          </li>
+          </li> */}
           <li>
             <a href="http://github.com/chrisirhc/">Github</a>
           </li>

@@ -4,6 +4,18 @@ body {
   background: #f8f8f8;
 }
 
+main::before {
+  opacity: 0.5;
+  content: "<main>";
+  font-family: monospace;
+}
+
+main::after {
+  opacity: 0.5;
+  content: "</main>";
+  font-family: monospace;
+}
+
 p::before {
   opacity: 0.5;
   content: "<p>";
