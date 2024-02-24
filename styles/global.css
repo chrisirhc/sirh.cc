@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  padding: 1em;
+  background: #f8f8f8;
+}
+
+main::before {
+  opacity: 0.5;
+  content: "<main>";
+  font-family: monospace;
+}
+
+main::after {
+  opacity: 0.5;
+  content: "</main>";
+  font-family: monospace;
+}
+
+p::before {
+  opacity: 0.5;
+  content: "<p>";
+  font-family: monospace;
+}
+
+p::after {
+  opacity: 0.5;
+  content: "</p>";
+  font-family: monospace;
+}
+
+h1::before {
+  opacity: 0.5;
+  content: "<h1>";
+  font-family: monospace;
+}
+
+h1::after {
+  opacity: 0.5;
+  content: "</h1>";
+  font-family: monospace;
+}
+
+li::before {
+  opacity: 0.5;
+  content: "<li>";
+  font-family: monospace;
+}
+
+li::after {
+  opacity: 0.5;
+  content: "</li>";
+  font-family: monospace;
+}
