@@ -14,7 +14,15 @@ export default function Home() {
             <a href="http://blog.sirh.cc/">Blog</a>
           </li> */}
           <li>
-            <a href="http://github.com/chrisirhc/">Github</a>
+            <a href="https://github.com/chrisirhc/">Github</a>
+          </li>
+          <li>
+            Projects:
+            <ul>
+              <li>
+                <a href="https://postbox.b65.dev/">Postbox @ Singapore</a>
+              </li>
+            </ul>
           </li>
           {/* <a href="http://about.me/chrisirhc">about.me</a> */}
         </ul>
