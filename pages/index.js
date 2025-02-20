@@ -11,7 +11,7 @@ export default function Home() {
         <p>Software engineer.</p>
         <ul>
           <li>
-            <a href="http://blog.sirh.cc/">Blog</a>
+            <a href="https://blog.sirh.cc/">Blog</a>
           </li>
           <li>
             <a href="https://github.com/chrisirhc/">Github</a>
