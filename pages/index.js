@@ -22,6 +22,9 @@ export default function Home() {
               <li>
                 <a href="https://postbox.b65.dev/">Postbox @ Singapore</a>
               </li>
+              <li>
+                <a href="https://airq.b65.dev/">AirQ</a>
+              </li>
             </ul>
           </li>
           {/* <a href="http://about.me/chrisirhc">about.me</a> */}
